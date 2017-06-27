@@ -1,0 +1,23 @@
+
+RAW_FOLDER : "raw"
+BWA_GENOM_REF: "/DATAS/references/hg19/hg19.fa" 
+DB_SNP : "/DATAS/references/hg19/annotations/dbsnp_144.b37.vcf.gz"
+OUTPUT:
+    - Coriellsmall.varscan.snp.vcf.gz
+
+  # - CGH1008.varscan.snp.vcf
+  # - CGH1075.varscan.snp.vcf
+  # - CGH1076.varscan.snp.vcf
+  # - CGH1077.varscan.snp.vcf
+  # - CGH1678.varscan.snp.vcf
+  # - CGH1679.varscan.snp.vcf
+  # - CGH169.varscan.snp.vcf
+  # - Coriell.varscan.snp.vcf
+  # - CGH1008.varscan.indel.vcf
+  # - CGH1075.varscan.indel.vcf
+  # - CGH1076.varscan.indel.vcf
+  # - CGH1077.varscan.indel.vcf
+  # - CGH1678.varscan.indel.vcf
+  # - CGH1679.varscan.indel.vcf
+  # - CGH169.varscan.indel.vcf
+
