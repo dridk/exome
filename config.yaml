@@ -1,7 +1,17 @@
 
-RAW_FOLDER : "raw"
+
+
+RAW_FOLDER : "test"
 BWA_GENOM_REF: "/DATAS/references/hg19/hg19.fa" 
-DB_SNP : "/DATAS/references/hg19/annotations/dbsnp_144.b37.vcf.gz"
+DB_SNP : "/DATAS/references/hg19/annotations/dbSNP_144.b37.vcf.gz"
+
+SNPEFF_CONFIG: "/APPS/share/snpEff/snpEff.config"
+
+
+
+ILLUMINA_FOLDER: "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2"
+ILLUMINA_SAMPLESHEET : "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2/SampleSheet20170522MedExome.csv"
+
 OUTPUT:
     - Coriellsmall.varscan.snp.vcf.gz
 
