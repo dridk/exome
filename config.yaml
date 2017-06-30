@@ -1,16 +1,33 @@
 
 
 
-RAW_FOLDER : "test"
+RAW_FOLDER : "fastqReal"
 BWA_GENOM_REF: "/DATAS/references/hg19/hg19.fa" 
 DB_SNP : "/DATAS/references/hg19/annotations/dbSNP_144.b37.vcf.gz"
 
 SNPEFF_CONFIG: "/APPS/share/snpEff/snpEff.config"
 
-
+LANES_NUMBER: 4
 
 ILLUMINA_FOLDER: "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2"
 ILLUMINA_SAMPLESHEET : "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2/SampleSheet20170522MedExome.csv"
+
+
+SAMPLES : 
+  - CGH1008
+  - CGH1008
+  - CGH1075
+  - CGH1075
+  - CGH1076
+  - CGH1076
+  - CGH1077
+  - CGH1077
+  - CGH1678
+  - CGH1678
+  - CGH1679
+  - CGH1679
+  - CGH169
+
 
 OUTPUT:
     - Coriellsmall.varscan.snp.vcf.gz

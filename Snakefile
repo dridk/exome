@@ -49,12 +49,7 @@ configfile : "config.yaml"
 
 rule all:
 	input:
-		"Coriell.varscan.snp.norm.vcf.gz",
-		"Coriell.samtools.norm.vcf.gz",
-		"Coriell.freebayes.norm.vcf.gz"
-
-
-
+		expand("{sample}.freebayes.vcf.gz", sample = config["SAMPLES"])
 # =============== MERGE LANES 
 rule mergelane:
 	input: 
@@ -84,26 +79,37 @@ rule clean:
 
 # =============== RULE ALIGNEMENT 
 # READ GROUP SHOULD BE REPLACED BY LANE 
+# CGH1678_S5_L001_I1_001.fastq.gz 
 rule alignement : 
 	input:
-		forward = "{sample}_R1.clean.fastq.gz", 
-		reverse = "{sample}_R2.clean.fastq.gz"
+		forward = lambda wildcards : glob.glob(config["RAW_FOLDER"]+"/"+wildcards.sample+"_*_L00"+wildcards.lane+"_R1_001.fastq.gz"),
+		reverse = lambda wildcards : glob.glob(config["RAW_FOLDER"]+"/"+wildcards.sample+"_*_L00"+wildcards.lane+"_R2_001.fastq.gz")
 	output:
-		temp("{sample}.unsorted.sam")
-	threads: 100 
+		temp("{sample}.L00{lane}.sam")
+	threads: 4 
 	shell:
-		"bwa mem -M -R '@RG\tID:{wildcards.sample}\tLB:MERGE\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
+		"bwa mem -M -R '@RG\tID:medexome\tLB:{wildcards.lane}\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
 		
+
+
+rule mergebam:
+	input:
+		lambda wildcards: expand("{sample}.L00{num}.sam", sample = wildcards.sample, num = range(1,5))
+	output:
+		temp("{sample}.unsorted.bam")
+	shell:
+		"samtools merge {input} > {output}"
 
 
 rule sam_to_bam:
 	input:
-		"{filename}.unsorted.sam"
+		"{filename}.sam"
 	output:
-		temp("{filename}.unsorted.bam")
+		temp("{filename}.bam")
 	threads: 100 
 	shell:
 		"sambamba view -h --sam-input -t {threads} -f bam -o {output} {input}"
+
 
 rule sort_bam:
 	input:
@@ -224,11 +230,24 @@ rule freebayes_calling:
 		"freebayes -f {config[BWA_GENOM_REF]} {input} > {output}"
 
 
+
+
+# Run freebayes varcalling:
+rule freebayes_global_calling:
+	input:
+		expand("{sample}.sorted.dup.bam", sample = config["SAMPLES"])
+	output:
+		temp("all.freebayes.vcf")
+	shell:
+		"freebayes -f {config[BWA_GENOM_REF]} {input} > {output}"
+
+
+
 rule bgzip_tabix:
 	input:
 		"{filename}.vcf"
 	output:
-		"{filename}.vcf.gz"
+		temp("{filename}.vcf.gz")
 	shell:
 		"bgzip {input}; tabix {output}"
 
@@ -237,7 +256,7 @@ rule normalization:
 	input:
 		"{name}.vcf"
 	output:
-		"{name}.norm.vcf"
+		temp("{name}.norm.vcf")
 	shell:
 		"vt normalize {input} -r {config[BWA_GENOM_REF]} -o {output}"
 
