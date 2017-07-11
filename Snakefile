@@ -88,17 +88,18 @@ rule alignement :
 		temp("{sample}.L00{lane}.sam")
 	threads: 4 
 	shell:
-		"bwa mem -M -R '@RG\tID:medexome\tLB:{wildcards.lane}\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
+		"bwa mem -M -R '@RG\tID:{wildcards.sample}\tLB:{wildcards.lane}\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
 		
 
 
 rule mergebam:
 	input:
-		lambda wildcards: expand("{sample}.L00{num}.sam", sample = wildcards.sample, num = range(1,5))
+		lambda wildcards: expand("{sample}.L00{num}.bam", sample = wildcards.sample, num = range(1,5))
 	output:
 		temp("{sample}.unsorted.bam")
+	threads: 100
 	shell:
-		"samtools merge {input} > {output}"
+		"samtools merge -@ {threads} {output} {input}"
 
 
 rule sam_to_bam:
