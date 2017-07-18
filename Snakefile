@@ -1,7 +1,7 @@
 import os
 import glob
 
-configfile : "config.yaml"
+configfile : "config.yml"
 
 
 
@@ -49,7 +49,10 @@ configfile : "config.yaml"
 
 rule all:
 	input:
-		expand("{sample}.freebayes.vcf.gz", sample = config["SAMPLES"])
+		expand("{sample}.sample.vcf.gz", sample = config["SAMPLES"])
+
+
+
 # =============== MERGE LANES 
 rule mergelane:
 	input: 
@@ -88,7 +91,7 @@ rule alignement :
 		temp("{sample}.L00{lane}.sam")
 	threads: 4 
 	shell:
-		"bwa mem -M -R '@RG\tID:{wildcards.sample}\tLB:{wildcards.lane}\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
+		"bwa mem -M -R '@RG\tID:{wildcards.sample}.{wildcards.lane}\tLB:medexome\tSM:{wildcards.sample}\tPL:ILLUMINA' -t {threads} {config[BWA_GENOM_REF]} {input.forward} {input.reverse} > {output}"
 		
 
 
@@ -131,58 +134,6 @@ rule mark_duplicate:
 	shell:
 		"sambamba markdup -t {threads} {input} {output}"
 
-# ================ BQSR 
-
-rule bqsr_analyse_covariance:
-	input:
-		"{sample}.sorted.dup.bam"
-	output:
-		"{sample}.recal_data.table"
-	threads : 5
-	shell:
-		"gatk -T BaseRecalibrator -nct {threads} -R {config[BWA_GENOM_REF]} -I {input} -L chr20  -knownSites {config[DB_SNP]} -o {output}"
-
-
-# rule bqsr_second_pass:
-# 	input:
-# 		"{sample}.sorted.dup.bam",
-# 		"{sample}.recal_data.table"
-# 	output:
-# 		"{sample}.post_recal_data.table"
-# 	shell:
-# 		"gatk -T BaseRecalibrator -R {config[BWA_GENOM_REF]} -I {input[0]} -L chr20  -knownSites {config[DB_SNP]} -BQSR {input[1]} -o {output}"
-
-# rule bqsr_generate_plot:
-# 	input:
-# 		"{sample}.recal_data.table",
-# 		"{sample}.post_recal_data.table"
-# 	output:
-# 		"{sample}.bqsr.recalibration.pdf"
-# 	shell:
-# 		"gatk -T AnalyzeCovariates -l DEBUG -R {config[BWA_GENOM_REF]} -L chr20 -before {input[0]} -after {input[1]} -plots {output}"
-
-
-rule bqsr_apply:
-	input:
-		"{sample}.sorted.dup.bam",
-		"{sample}.recal_data.table"
-	output:
-		"{sample}.sorted.dup.bqsr.bam"
-	shell:
-		"gatk -T PrintReads -R {config[BWA_GENOM_REF]} -I {input[0]} -L chr20 -BQSR {input[1]} -o {output}"
-
-
-
-# Call ulimit -c unlimited sometime ...
-rule haplotype_caller:
-	input:
-		"{sample}.sorted.dup.bam"
-	output:
-		"{sample}.gatk.vcf"
-	shell:
-		"gatk -Xmx32g -T HaplotypeCaller -R {config[BWA_GENOM_REF]} -I {input} -o {output}"
-
-
 # Run varscan snp 
 rule varscan_snp:
 	input:
@@ -191,15 +142,6 @@ rule varscan_snp:
 		temp("{sample}.varscan.snp.vcf")
 	shell:
 		"samtools mpileup -f {config[BWA_GENOM_REF]} {input}|varscan pileup2snp --min-coverage 2 --output-vcf > {output}"
-
-# # Run varscan indel 
-# rule varscan_indel:
-# 	input:
-# 		"{sample}.mpilup"
-# 	output:
-# 		"{sample}.varscan.indel.vcf"
-# 	shell:
-# 		"varscan mpileup2indel {input} --output-vcf > {output}"
 
 # Run samtools var calling 
 rule samtools_calling:
@@ -232,7 +174,6 @@ rule freebayes_calling:
 
 
 
-
 # Run freebayes varcalling:
 rule freebayes_global_calling:
 	input:
@@ -243,12 +184,11 @@ rule freebayes_global_calling:
 		"freebayes -f {config[BWA_GENOM_REF]} {input} > {output}"
 
 
-
 rule bgzip_tabix:
 	input:
 		"{filename}.vcf"
 	output:
-		temp("{filename}.vcf.gz")
+		"{filename}.vcf.gz"
 	shell:
 		"bgzip {input}; tabix {output}"
 
@@ -257,7 +197,7 @@ rule normalization:
 	input:
 		"{name}.vcf"
 	output:
-		temp("{name}.norm.vcf")
+		"{name}.norm.vcf"
 	shell:
 		"vt normalize {input} -r {config[BWA_GENOM_REF]} -o {output}"
 
@@ -272,3 +212,33 @@ rule snpEff :
 		"{filename}.ann.vcf"
 	shell:
 		"snpEff -Xmx4g -c {config[SNPEFF_CONFIG]} -v hg19 {input} > {output}"
+
+rule vcf_filter: 
+	input:
+		"{filename}.vcf.gz"
+	output:
+		"{filename}.filter.vcf"
+	shell:
+		"bcftools filter -i 'QUAL >{config[VCF_QUAL]}' -R {config[TARGET_BED_FILE]} -Ov {input} > {output}"
+
+
+# Split global VCF by family according pedigree file 
+rule split_vcf_by_family:
+	input:
+		vcf = "all.freebayes.norm.vcf.gz",
+		ped = config["PEDIGREE_FILE"]
+	output:
+		"{family}.family.vcf"
+	shell:
+		"SAMPLES=$(cat {input.ped}|grep -v '#'|awk '$1==\"{wildcards.family}\"{{print $2}}'|paste -s -d',');"
+		"echo $SAMPLES found in {wildcards.family};"
+		"bcftools view -c1 -Ov -s ${{SAMPLES}} -o {output} {input.vcf}"
+
+# Split global VCF by Sample name according pedigree file 	
+rule split_vcf_by_sample:
+	input:
+		vcf = "all.freebayes.norm.vcf.gz"
+	output:
+		"{sample}.sample.vcf"
+	shell:
+		"bcftools view -c1 -Ov -s {wildcards.sample} -o {output} {input};"
