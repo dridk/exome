@@ -1,0 +1,920 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"asy",
+				"asyncio"
+			],
+			[
+				"web",
+				"websocket_handler"
+			],
+			[
+				"cat",
+				"categories"
+			],
+			[
+				"sorte",
+				"sorted_keys"
+			],
+			[
+				"pers",
+				"person_id"
+			],
+			[
+				"com",
+				"compute_area   Function (main.rs) : fn compute_area(x:i32 , y:i32) -> i32"
+			],
+			[
+				"print",
+				"println\tprintln!(…)"
+			],
+			[
+				"prin",
+				"println\tprintln!(…)"
+			],
+			[
+				"fi",
+				"filename"
+			],
+			[
+				"db",
+				"dbname"
+			],
+			[
+				"Fr",
+				"ForeignKeyField"
+			],
+			[
+				"fie",
+				"fields"
+			],
+			[
+				"geno",
+				"geno_fields"
+			],
+			[
+				"shotg",
+				"Shotgun_sequencing"
+			],
+			[
+				"Qt",
+				"QtWidgets"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "import sys \nfro",
+			"file": "main.py",
+			"file_size": 0,
+			"file_write_time": 131486585515507778,
+			"settings":
+			{
+				"buffer_size": 15,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Check"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Run Release"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Bench"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Release"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Document"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Clippy"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Script"
+				]
+			],
+			[
+				"Packages/Rust Enhanced/Cargo.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Bench"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Rust/Cargo.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Bench"
+				],
+				[
+					"Packages/Rust/Cargo.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Check"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Run Release"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Bench"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Release"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Document"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Clippy"
+				],
+				[
+					"Packages/Rust Enhanced/Cargo.sublime-build",
+					"Script"
+				],
+				[
+					"Packages/Rust Enhanced/RustEnhanced.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust Enhanced/RustEnhanced.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Rust/Rust.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Rust/Rust.sublime-build",
+					""
+				],
+				[
+					"Packages/Rust/Rust.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Rust/Rust.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "install ",
+		"selected_items":
+		[
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"link",
+				"Snippet: Markdown Hyperlink"
+			],
+			[
+				"inser",
+				"Insert Filepath"
+			],
+			[
+				"updateda",
+				"Pelican: Update Article Date"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"up",
+				"Pelican: Update Article Date"
+			],
+			[
+				"date",
+				"Pelican: Update Article Date"
+			],
+			[
+				"pelican ne",
+				"Pelican: New Article (Markdown)"
+			],
+			[
+				"pelican ",
+				"Pelican: New Article (Markdown)"
+			],
+			[
+				"upda",
+				"Pelican: Update Article Date"
+			],
+			[
+				"slug",
+				"Pelican: Update Slug using Title"
+			],
+			[
+				"pelican",
+				"Pelican: New Article (Markdown)"
+			],
+			[
+				"Slug",
+				"Pelican: Update Slug using Title"
+			],
+			[
+				"uda",
+				"Pelican: Update Article Date"
+			],
+			[
+				"linki",
+				"Pelican: New Article (Markdown)"
+			],
+			[
+				"set sytax mar",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"set syntax markd",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"set syntax mar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"syntax yam",
+				"Set Syntax: YAML"
+			],
+			[
+				"pelicain",
+				"Pelican: New Article (Markdown)"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"d",
+				"Diffy Compare"
+			],
+			[
+				"json",
+				"JsonTree: Show Tree"
+			],
+			[
+				"run",
+				"Build With: Cargo - Run"
+			],
+			[
+				"cargo",
+				"Build With: Cargo - Run"
+			],
+			[
+				"down",
+				"SFTP: Download File"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"liverel",
+				"Snippet: Insert livereload.js script"
+			],
+			[
+				"livere",
+				"Snippet: Create new LiveReload plugin"
+			],
+			[
+				"LiveReload: Enable/disable plugins",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"live",
+				"LiveReload: Help"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"travis",
+				"Travis CI: Show Build"
+			],
+			[
+				"syntax java",
+				"Set Syntax: Java"
+			],
+			[
+				"javatar ",
+				"Javatar: Create new..."
+			],
+			[
+				"javatar",
+				"Javatar: Create new..."
+			],
+			[
+				"syntax ja",
+				"Set Syntax: Java Properties"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"syntax markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"set syntax mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"qml",
+				"Set Syntax: QML"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"os.environ['HOME']",
+			"os.environ",
+			"import os"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/sacha/Linux_data/dev/blog/content/brouillon/haplotype.txt",
+		"/media/sacha/Linux_data/dev/blog/content/post18.md",
+		"/media/sacha/Linux_data/dev/blog/content/post26.md",
+		"/media/sacha/Linux_data/dev/blog/content/selection1.md",
+		"/media/sacha/Linux_data/dev/blog/content/post23.md",
+		"/media/sacha/Linux_data/dev/blog/content/post25.md",
+		"/media/sacha/Linux_data/dev/blog/content/post27.md",
+		"/media/sacha/Linux_data/dev/blog/content/post20.md",
+		"/home/sacha/.zshrc",
+		"/tmp/vep.vcf",
+		"/media/sacha/Linux_data/dev/blog/content/post24.md",
+		"/home/sacha/Dev/CuteVariant/src/lib/vcfreader.h",
+		"/home/sacha/Dev/CuteVariant/exemples/freebayes.vcf",
+		"/home/sacha/Dev/CuteVariant/exemples/test.vcf",
+		"/home/sacha/Dev/CuteVariant/exemples/variants_1.ann.vcf",
+		"/media/sacha/Linux_data/dev/blog/content/post22.md",
+		"/home/sacha/Dev/CuteVariant/shemasqlite.xml",
+		"/home/sacha/Dev/CuteVariant/src/lib/vcfreader.cpp",
+		"/media/sacha/Linux_data/dev/FastQt/.travis.yml",
+		"/home/sacha/Download/readPDG.py",
+		"/home/sacha/Dev/CuteVariant/src/libcore/libcore.pro",
+		"/media/sacha/Linux_data/dev/blog/content/post21.md",
+		"/media/sacha/Linux_data/dev/pirus/pirus/api/main.py",
+		"/media/sacha/Linux_data/dev/pirus/pirus/api/views.py",
+		"/media/sacha/Linux_data/dev/pirus/pirus/api/routes.py",
+		"/media/sacha/Linux_data/dev/pirus/test.py",
+		"/media/sacha/Linux_data/dev/dockertest/Dockerfile",
+		"/media/sacha/Linux_data/dev/dockertest/app.py",
+		"/home/sacha/biblio.bib",
+		"/media/sacha/Linux_data/dev/dockertest/testdocker.py",
+		"/home/sacha/My Collection.bib",
+		"/media/sacha/Linux_data/dev/fastQt/.travis.yml",
+		"/media/sacha/Linux_data/dev/CutePeaks/.appveyor.yml",
+		"/media/sacha/Linux_data/dev/fastQt/fastqt.desktop",
+		"/media/sacha/Linux_data/dev/CutePeaks/cutepeaks.desktop",
+		"/media/sacha/Linux_data/dev/CutePeaks/.travis.yml",
+		"/tmp/cwltools/exemple/tar-job.yml",
+		"/tmp/cwltools/exemple/tar.cwl",
+		"/media/sacha/Linux_data/dev/blog/Makefile",
+		"/media/sacha/Linux_data/dev/test2/main.py",
+		"/media/sacha/Linux_data/dev/mucobiome/config.yaml",
+		"/home/sacha/Dev/these/these.tex",
+		"/media/sacha/Linux_data/dev/mucobiome/Snakefile",
+		"/media/sacha/Linux_data/dev/mucobiome/abbreviation",
+		"/home/sacha/Download/datapackage.json",
+		"/home/sacha/Dev/nobelprize/data/prize.json",
+		"/home/sacha/Dev/nobelprize/data/laureate.json",
+		"/home/sacha/Dev/nobelprize/nobel.py",
+		"/home/sacha/Dev/rust/src/main.rs",
+		"/home/sacha/.config/sublime-text-3/Packages/User/RustAutoComplete.sublime-settings",
+		"/home/sacha/Dev/rust/main.rs",
+		"/home/sacha/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/sacha/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/sacha/.cargo/env",
+		"/home/sacha/.config/sublime-text-3/Installed Packages/Rust Enhanced.sublime-package",
+		"/home/sacha/Dev/landing_page/css/landing-page.css",
+		"/home/sacha/Dev/landing_page/index.html",
+		"/home/sacha/.config/sublime-text-3/Packages/User/openinbrowser.sublime-settings",
+		"/home/sacha/Dev/discord/app.py",
+		"/home/sacha/Dev/these/biblio.bib",
+		"/home/sacha/Dev/CuteVariant/schema.sql",
+		"/home/sacha/Dev/CuteVariant/import_vcf.py",
+		"/home/sacha/.config/sublime-text-3/Packages/User/SFTP.sublime-settings",
+		"/home/sacha/.config/sublime-text-3/Packages/User/sftp_servers/labsquare",
+		"/tmp/sublime-sftp-browse-1489070784/labsquare/home/dridk/bioinfo/bioinfo/pipe_snp_indel/Snakefile",
+		"/tmp/sublime-sftp-browse-1489071244/labsquare/home/dridk/bioinfo/bioinfo/sim_pipeline/config.yml",
+		"/tmp/sublime-sftp-browse-1489071249/labsquare/home/dridk/bioinfo/bioinfo/sim_pipeline/Snakefile",
+		"/tmp/sublime-sftp-browse-1489071150/labsquare/home/dridk/bioinfo/bioinfo/sim_pipeline/Snakefile",
+		"/home/sacha/Dev/CuteVariant/all/run190/TSVC_variants_MID98.ann.vcf",
+		"/home/sacha/Dev/www.labsquare.org/landing_labsquare.html",
+		"/home/sacha/Dev/www.labsquare.org/css/landing-page.css",
+		"/media/sacha/Linux_data/dev/fastQt/.appveyor.yml",
+		"/media/sacha/Linux_data/dev/fastQt/CHANGELOG",
+		"/home/sacha/Dev/www.labsquare.org/landing-page.css",
+		"/home/sacha/Dev/www.labsquare.org/font-awesome.min .css",
+		"/home/sacha/Dev/www.labsquare.org/bootstrap.css",
+		"/home/sacha/Dev/variant_to_sqlite/test1/model.py",
+		"/home/sacha/Dev/variant_to_sqlite/test2/vcf2sql.py",
+		"/media/sacha/Linux_data/bioinfo/data/Mucobiome/extract.sh",
+		"/home/sacha/Dev/build-FastQt-Desktop_Qt_5_7_0_GCC_64bit-Release/deploy/usr/share/metainfo/fastqt.appdata.xml",
+		"/home/sacha/Dev/build-FastQt-Desktop_Qt_5_7_0_GCC_64bit-Release/deploy/fastqt.desktop",
+		"/home/sacha/Dev/build-FastQt-Desktop_Qt_5_7_0_GCC_64bit-Release/deploy/default.desktop",
+		"/home/sacha/Dev/build-FastQt-Desktop_Qt_5_7_0_GCC_64bit-Release/deploy/usr/share/metainfo/default.appdata.xml",
+		"/home/sacha/deploy/usr/share/metainfo/fastqt.appdata.xml",
+		"/home/sacha/Dev/build-FastQt-Desktop_Qt_5_7_0_GCC_64bit-Release/default.desktop",
+		"/home/sacha/deploy/fastqt.desktop",
+		"/home/sacha/Dev/build-CuteVcf-Desktop_Qt_5_7_0_GCC_64bit-Release/MyApp.AppDir/usr/share/metainfo/default.appdata.xml",
+		"/home/sacha/Dev/FastQt/project.pro",
+		"/media/sacha/Linux_data/dev/linuxdeployqt/linuxdeployqt/main.cpp",
+		"/media/sacha/Linux_data/dev/linuxdeployqt/shared/shared.h",
+		"/media/sacha/Linux_data/dev/linuxdeployqt/shared/shared.cpp",
+		"/home/sacha/Dev/fastQt/projet.pro",
+		"/home/sacha/Dev/fastQt/src/CMakeLists.txt",
+		"/home/sacha/Dev/build-CuteVcf-Desktop_Qt_5_7_0_GCC_64bit-Release/MyApp.AppDir/usr/share/metainfo/myapp.appdata.xml",
+		"/home/sacha/Dev/build-CuteVcf-Desktop_Qt_5_7_0_GCC_64bit-Release/MyApp.AppDir/myapp.desktop",
+		"/home/sacha/Dev/build-CuteVcf-Desktop_Qt_5_7_0_GCC_64bit-Release/usr/share/metainfo/default.appdata.xml",
+		"/home/sacha/yohan/yohan.py",
+		"/home/sacha/Dev/build-CuteVcf-Desktop_Qt_5_7_0_GCC_64bit-Release/default.desktop",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Utilities/QualityCount.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Graphs/BaseGroup.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Sequence/Sequence.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Analysis/AnalysisRunner.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Sequence/QualityEncoding/PhredEncoding.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Modules/BasicStats.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Modules/PerBaseQualityScores.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Modules/PerSequenceQualityScores.java",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Modules/PerBaseSequenceContent.java",
+		"/home/sacha/hello/snapcraft.yaml",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Graphs/BaseGroup.class",
+		"/home/sacha/Dev/blog/publishconf.py",
+		"/home/sacha/Dev/blog/pelicanconf.py",
+		"/home/sacha/Dev/blog/content/post18.md",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/Modules/ModuleFactory.java",
+		"/home/sacha/Dev/blog/content/post20.md",
+		"/home/sacha/Dev/test.py",
+		"/home/sacha/Download/FastQC/uk/ac/babraham/FastQC/FastQCApplication.java",
+		"/home/sacha/Dev/blog/content/post19.md",
+		"/home/sacha/Dev/java/test.java",
+		"/media/sacha/Linux_data/bioinfo/apps/share/FastQC/uk/ac/babraham/FastQC/Analysis/AnalysisRunner.class",
+		"/media/sacha/Linux_data/bioinfo/data/Mucobiome/aureus.txt",
+		"/media/sacha/Linux_data/bioinfo/data/Mucobiome/mytree.tree",
+		"/home/sacha/Dev/blog/content/post1.md",
+		"/home/sacha/Dev/blog/content/post2.md",
+		"/home/sacha/testpirus/metadata.yaml",
+		"/home/sacha/test.txt",
+		"/home/sacha/repeatLow.sh",
+		"/home/sacha/Dev/blog/content/post12.md",
+		"/home/sacha/Dev/blog/content/post11.md"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 129.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"[\\d,]*\\smmol/l",
+			"g/l",
+			"alias ",
+			"NormDecay",
+			"GetDecay",
+			"GetPart",
+			"getPart",
+			"idaughter1",
+			"indec",
+			"ibr",
+			"ibr ",
+			"idtype",
+			"idcount",
+			"iacode",
+			"iipart",
+			"indecay",
+			"itrack",
+			"iflavor",
+			"istrange",
+			"iiso3",
+			"iisospin",
+			"iwidth",
+			"imass",
+			"icharge",
+			"ipclass",
+			"ipcode",
+			"imatter",
+			"ipdg",
+			"iname",
+			"icount",
+			"kPlankBar",
+			"icharge",
+			"ipclass",
+			"ipcode",
+			"imatter",
+			"ipdg",
+			"iname",
+			"icount",
+			"avec",
+			"FastQt",
+			"Fast",
+			"fast",
+			"frag",
+			"fragment",
+			"entre",
+			"41",
+			"^.",
+			"\\item",
+			"replace",
+			"^[1-3]",
+			"-\\\"",
+			"^[1-3]",
+			"aeruginosa",
+			"aeruginosa*",
+			"aeruginosa",
+			"Pseudomonas aeruginosa",
+			"\\( | \\)",
+			"\\( ",
+			"\\w\\(",
+			"\\w(",
+			"(",
+			"( ",
+			"fastqc",
+			"gitter",
+			"AF",
+			"MAF",
+			"description",
+			"trusted",
+			";",
+			"required",
+			"++\n",
+			"create",
+			"appstream",
+			",",
+			", ",
+			",",
+			" ",
+			" S",
+			"\\n",
+			"[0-9]+"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"normDecay",
+			"getDecay",
+			"getPart",
+			"I_DAUGHTER_1",
+			"I_NDEC",
+			"I_BR",
+			"ID_TYPE",
+			"ID_COUNT",
+			"I_ACODE",
+			"I_IPART",
+			"IN_DECAY",
+			"I_TRACK",
+			"I_FLAVOR",
+			"I_STRANGE",
+			"I_ISO3",
+			"I_ISOSPIN",
+			"I_WIDTH",
+			"I_MASS",
+			"I_CHARGE",
+			"IP_CLASS",
+			"IP_CODE",
+			"I_MATTER",
+			"I_PDG",
+			"I_NAME",
+			"I_COUNT",
+			"K_PLANK_BAR",
+			"ICHARGE",
+			"IPCLASS",
+			"IPCODE",
+			"IMATTER",
+			"IPDG",
+			"INAME",
+			"ICOUNT",
+			"P. aeruginosa"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 431.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 154.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "gui.sublime-project",
+	"replace":
+	{
+		"height": 88.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

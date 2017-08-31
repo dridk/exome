@@ -1,0 +1,11 @@
+{
+	    "settings": {
+        // ...
+        "python_interpreter": "/home/sacha/Bioinfo/miniconda3/envs/exome/bin/python",
+
+        "python_package_paths": [
+            "$home/.buildout/eggs",
+            "$project_path/addons"
+        ]
+    }
+}
