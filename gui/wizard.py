@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWizard, QWizardPage
-from page import BclPage, RunPage, SnakePage
+from page import *
 
 class ExomeWizard(QWizard):
     def __init__(self):
@@ -8,10 +8,10 @@ class ExomeWizard(QWizard):
 
 
         self.addPage(BclPage())
-        self.addPage(RunPage("ls",["-l","/home/sacha"]))
+        self.addPage(BclRunPage())
 
         self.addPage(SnakePage())
-        self.addPage(RunPage("cal",["1984"]))
+        self.addPage(SnakeRunPage())
 
 
 

@@ -1,7 +1,7 @@
 {
 	    "settings": {
         // ...
-        "python_interpreter": "/home/sacha/Bioinfo/miniconda3/envs/exome/bin/python",
+        "python_interpreter": "/home/sacha/miniconda3/envs/medexome/bin/python3.6",
 
         "python_package_paths": [
             "$home/.buildout/eggs",

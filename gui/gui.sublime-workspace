@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"samp",
+				"sampleModel\tstatement"
+			],
+			[
+				"sam",
+				"sampleView\tstatement"
+			],
+			[
+				"for",
+				"formLayout"
+			],
+			[
+				"bed",
+				"bedslop\tstatement"
+			],
+			[
+				"F",
+				"FOLDER\tstatement"
+			],
+			[
+				"QP",
+				"QPushButton"
+			],
+			[
 				"asy",
 				"asyncio"
 			],
@@ -68,13 +92,56 @@
 	"buffers":
 	[
 		{
-			"contents": "import sys \nfro",
-			"file": "main.py",
-			"file_size": 0,
-			"file_write_time": 131486585515507778,
+			"file": "bcl2fastq-gui.py",
 			"settings":
 			{
-				"buffer_size": 15,
+				"buffer_size": 193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "page.py",
+			"settings":
+			{
+				"buffer_size": 7213,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/sacha/Devel/exome/config.yml",
+			"settings":
+			{
+				"buffer_size": 1274,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gui.sublime-project",
+			"settings":
+			{
+				"buffer_size": 244,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/sacha/Devel/exome/scripts/createfastq.sh",
+			"settings":
+			{
+				"buffer_size": 488,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wizard.py",
+			"settings":
+			{
+				"buffer_size": 299,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -286,10 +353,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 92.0,
-		"last_filter": "install ",
+		"height": 172.0,
+		"last_filter": "insta",
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"install ",
 				"Package Control: Install Package"
@@ -385,10 +460,6 @@
 			[
 				"remove ",
 				"Package Control: Remove Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"syntax mark",
@@ -514,6 +585,8 @@
 	},
 	"file_history":
 	[
+		"/home/sacha/Devel/exome/gui/bcl2fastq-gui.desktop",
+		"/home/sacha/Devel/exome/gui/bcl2fastq-gui.sh",
 		"/media/sacha/Linux_data/dev/blog/content/brouillon/haplotype.txt",
 		"/media/sacha/Linux_data/dev/blog/content/post18.md",
 		"/media/sacha/Linux_data/dev/blog/content/post26.md",
@@ -639,13 +712,11 @@
 		"/home/sacha/Dev/blog/content/post2.md",
 		"/home/sacha/testpirus/metadata.yaml",
 		"/home/sacha/test.txt",
-		"/home/sacha/repeatLow.sh",
-		"/home/sacha/Dev/blog/content/post12.md",
-		"/home/sacha/Dev/blog/content/post11.md"
+		"/home/sacha/repeatLow.sh"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -657,9 +728,12 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"sheet",
+			"path",
+			"sheet",
 			"[\\d,]*\\smmol/l",
 			"g/l",
 			"alias ",
@@ -785,30 +859,30 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "main.py",
+					"file": "bcl2fastq-gui.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15,
+						"buffer_size": 193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15,
-								15
+								156,
+								156
 							]
 						],
 						"settings":
@@ -821,7 +895,153 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "page.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7213,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6032,
+								6032
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/sacha/Devel/exome/config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gui.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/sacha/Devel/exome/scripts/createfastq.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "wizard.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

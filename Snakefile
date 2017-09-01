@@ -203,21 +203,51 @@ rule normalization:
 
 
 
-# Annotation 
+# Annotation ===============
 # SnpEff 
 rule snpEff : 
 	input:
-		"{filename}.vcf.gz"
+		"{filename}.vcf"
+	output:
+		temp("{filename}.snpEff.vcf")
+	shell:
+		"snpEff -Xmx4g -c {config[SNPEFF_CONFIG]} -v hg19 {input} > {output}"
+
+
+rule anno_dbSNP : 
+	input:
+		"{filename}.snpEff.vcf"
+	output:
+		temp("{filename}.dbsnp.vcf")
+	shell:
+		"SnpSift -Xmx4g annotate -dbsnp -db {config[DB_SNP]} {input} > {output}"
+
+rule anno_clinvar: 
+	input:
+		"{filename}.dbsnp.vcf"
+	output:
+		temp("{filename}.clinvar.vcf")
+	shell:
+		"SnpSift -Xmx4g annotate -clinvar -db {config[DB_CLINVAR]} {input} > {output}"
+
+rule anno_dbNSFP: 
+	input:
+		"{filename}.clinvar.vcf"
 	output:
 		"{filename}.ann.vcf"
 	shell:
-		"snpEff -Xmx4g -c {config[SNPEFF_CONFIG]} -v hg19 {input} > {output}"
+		"SnpSift -Xmx4g dbnsfp -db {config[DB_NSFP]} -v {input} > {output}"
+
+
+
+# Annotation ===============
+
 
 rule vcf_filter: 
 	input:
 		"{filename}.vcf.gz"
 	output:
-		"{filename}.filter.vcf"
+		temp("{filename}.filter.vcf")
 	shell:
 		"bcftools filter -i 'QUAL >{config[VCF_QUAL]}' -R {config[TARGET_BED_FILE]} -Ov {input} > {output}"
 
@@ -225,7 +255,7 @@ rule vcf_filter:
 # Split global VCF by family according pedigree file 
 rule split_vcf_by_family:
 	input:
-		vcf = "all.freebayes.norm.vcf.gz",
+		vcf = "all.freebayes.norm.filter.ann.vcf.gz",
 		ped = config["PEDIGREE_FILE"]
 	output:
 		"{family}.family.vcf"
@@ -237,8 +267,27 @@ rule split_vcf_by_family:
 # Split global VCF by Sample name according pedigree file 	
 rule split_vcf_by_sample:
 	input:
-		vcf = "all.freebayes.norm.vcf.gz"
+		vcf = "all.freebayes.norm.filter.ann.vcf.gz"
 	output:
 		"{sample}.sample.vcf"
 	shell:
 		"bcftools view -c1 -Ov -s {wildcards.sample} -o {output} {input};"
+
+rule vcf_to_csv:
+	input:
+		"{filename}.vcf.gz"
+	output:
+		"{filename}.tsv"
+	shell: 
+		"SnpSift extractFields TRIO1.family.vcf.gz CHROM POS REF ALT ID "
+		"dbNSFP_ExAC_AF dbNSFP_1000Gp1_AF "
+		"dbNSFP_MutationTaster_pred "
+		"dbNSFP_SIFT_pred "
+		"dbNSFP_MetaSVM_pred "
+		"MUT "
+		"CLNSRC "
+		"CLNDSDB "
+		"CLNDSDBID "
+		" GEN[*].GT "
+		" ANN[0].EFFECT "
+		"CLNHGVS > {output}" 

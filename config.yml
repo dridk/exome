@@ -1,29 +1,46 @@
 
 
 
-RAW_FOLDER : "fastqReal"
+RAW_FOLDER : "fastq08"
 BWA_GENOM_REF: "/DATAS/references/hg19/hg19.fa" 
 DB_SNP : "/DATAS/references/hg19/annotations/dbSNP_144.b37.vcf.gz"
+DB_NSFP : "/DATAS/references/hg19/annotations/dbNSFP2.9.txt.gz"
+DB_CLINVAR : "/DATAS/references/hg19/annotations/clinvar.vcf.gz "
 
 SNPEFF_CONFIG: "/APPS/share/snpEff/snpEff.config"
 
 LANES_NUMBER: 4
 
-ILLUMINA_FOLDER: "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2"
-ILLUMINA_SAMPLESHEET : "/DATAS/illumina/nextseq/170522_NB501647_0005_AHMHGVBGX2/SampleSheet20170522MedExome.csv"
-TARGET_BED_FILE: "MedExome_hg19_capture_targets.bed"
+TARGET_BED_FILE: "DI_panel.bed"
 TARGET_BED_SLOP : 10
 VCF_QUAL: 20
 PEDIGREE_FILE: pedigree.ped
 
 SAMPLES : 
-  - CGH1008
-  - CGH1075
-  - CGH1076
-  - CGH1077
-  - CGH1678
-  - CGH1679
-  - CGH169
+- ASG145494
+- BE1
+- BE2
+- CGH150212-I
+- CGH160373-I
+- CGH160585-I
+- CGH160592-I
+- CGH160665-I
+- CGH160667-I
+- CGH160832-I
+- CGH160900-I
+- CGH161156-I
+- CGH170151-I
+- CGH170387-I
+- CGH410-I
+- Pool-maman-1
+- Pool-maman-2
+- Pool-papa-1
+- Pool-papa-2
+- SGT152803-1
+- SGT152803-2
+- SGT152899
+- SGT153103-1
+- SGT153103-2
 
 
 OUTPUT:
