@@ -1,111 +1,53 @@
-name: medexome
+name: exome
 channels:
 - bioconda
 - conda-forge
 - defaults
 - r
 dependencies:
-- art=3.19.15=1
-- dropbox=5.2.1=py36_0
-- fastqc=0.11.5=pl5.22.0_2
-- filechunkio=1.6=py36_0
-- freebayes=1.1.0=py36_2
-- ftputil=3.2=py36_0
-- gatk=3.7=py36_0
+- bcftools=1.5=3
+- bwa=0.7.15=1
+- freebayes=1.1.0=py36_3
 - htslib=1.3.2=0
-- java-jdk=8.0.92=1
-- perl-threaded=5.22.0=pl5.22.0_12
-- perl-vcftools-vcf=0.953=3
-- picard=2.9.2=py36_1
-- pysftp=0.2.9=py36_0
-- snakemake=3.13.3=py36_0
-- snpeff=4.3.1p=1
+- sambamba=0.6.6=0
+- samtools=1.5=2
+- snpeff=4.3.1q=0
 - snpsift=4.3.1p=py36_0
-- trimmomatic=0.36=3
-- varscan=2.4.2=0
-- vcflib=1.0.0_rc1=0
-- vcftools=0.1.14=4
+- trimmomatic=0.36=5
 - vt=2015.11.10=1
-- wgsim=1.0=0
-- asn1crypto=0.22.0=py36_0
-- blas=1.1=openblas
 - bzip2=1.0.6=1
-- ca-certificates=2017.4.17=0
-- certifi=2017.4.17=py36_0
-- cffi=1.10.0=py36_0
-- chardet=3.0.2=py36_1
-- cryptography=1.9=py36_0
-- curl=7.52.1=0
-- dbus=1.10.22=0
-- docutils=0.13.1=py36_0
-- expat=2.2.1=0
-- fontconfig=2.12.1=4
-- freetype=2.7=1
-- gettext=0.19.7=1
-- glib=2.51.4=0
-- gsl=2.2.1=blas_openblas_2
+- curl=7.54.1=0
+- krb5=1.14.2=0
+- libssh2=1.8.0=1
+- zlib=1.2.8=3
+- dbus=1.10.20=0
+- expat=2.1.0=0
+- fontconfig=2.12.1=3
+- freetype=2.5.5=2
+- glib=2.50.2=1
 - gst-plugins-base=1.8.0=0
-- gstreamer=1.8.0=2
-- icu=58.1=1
-- idna=2.5=py36_0
+- gstreamer=1.8.0=0
+- icu=54.1=0
 - jpeg=9b=0
-- libffi=3.2.1=3
-- libiconv=1.14=4
-- libpng=1.6.28=0
-- libxcb=1.12=1
-- libxml2=2.9.4=4
-- ncurses=5.9=10
-- numpy=1.13.0=py36_blas_openblas_200
-- openblas=0.2.19=2
-- openssl=1.0.2k=0
-- pandas=0.20.2=np113py36_1
-- paramiko=2.1.2=py36_0
-- pcre=8.39=0
-- perl=5.22.0.1=0
-- pip=9.0.1=py36_0
-- psutil=5.2.1=py36_0
-- pyasn1=0.2.3=py36_0
-- pycparser=2.17=py36_0
-- pyopenssl=16.2.0=py36_0
-- pyqt=5.6.0=py36_4
-- pysocks=1.6.7=py36_0
-- python=3.6.1=3
-- python-dateutil=2.6.0=py36_0
-- pytz=2017.2=py36_0
-- pyyaml=3.12=py36_1
-- qt=5.6.2=3
-- readline=6.2=0
-- requests=2.18.1=py36_0
-- setuptools=33.1.1=py36_0
-- sip=4.18=py36_1
-- six=1.10.0=py36_1
-- sqlite=3.13.0=1
-- tk=8.5.19=1
-- urllib3=1.21.1=py36_1
-- wheel=0.29.0=py36_0
-- wrapt=1.10.8=py36_0
-- xorg-libxau=1.0.8=3
-- xorg-libxdmcp=1.1.2=3
-- xz=5.2.2=0
-- yaml=0.1.6=0
-- zlib=1.2.11=0
+- libffi=3.2.1=1
 - libgcc=5.2.0=0
-- libgfortran=3.0.0=1
-- mkl=2017.0.1=0
+- libiconv=1.14=0
+- libpng=1.6.30=1
+- libxcb=1.12=1
+- libxml2=2.9.4=0
 - openjdk=8.0.121=1
-- pip:
-  - decorator==4.0.11
-  - ipython==6.1.0
-  - ipython-genutils==0.2.0
-  - jedi==0.10.2
-  - pexpect==4.2.1
-  - pickleshare==0.7.4
-  - prompt-toolkit==1.0.14
-  - ptyprocess==0.5.2
-  - pygments==2.2.0
-  - pysam==0.11.2.2
-  - simplegeneric==0.8.1
-  - traitlets==4.3.2
-  - wcwidth==0.1.7
-prefix: /home/sacha/miniconda3/envs/medexome
+- openssl=1.0.2l=0
+- pcre=8.39=1
+- pip=9.0.1=py36_1
+- pyqt=5.6.0=py36_2
+- python=3.6.2=0
+- qt=5.6.2=5
+- readline=6.2=2
+- setuptools=27.2.0=py36_0
+- sip=4.18=py36_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- wheel=0.29.0=py36_0
+- xz=5.2.3=0
+prefix: /home/genmol/miniconda3/envs/exome
 
