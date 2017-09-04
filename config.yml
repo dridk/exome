@@ -17,34 +17,28 @@ VCF_QUAL: 20
 PEDIGREE_FILE: pedigree.ped
 
 SAMPLES : 
-- ASG145494
-- BE1
-- BE2
-- CGH150212-I
-- CGH160373-I
-- CGH160585-I
-- CGH160592-I
-- CGH160665-I
-- CGH160667-I
-- CGH160832-I
-- CGH160900-I
-- CGH161156-I
-- CGH170151-I
-- CGH170387-I
-- CGH410-I
-- Pool-maman-1
-- Pool-maman-2
-- Pool-papa-1
-- Pool-papa-2
-- SGT152803-1
-- SGT152803-2
-- SGT152899
-- SGT153103-1
-- SGT153103-2
+- CGH1040-CI
+- CGH1206-P
+- CGH1207-M
+- CGH150474-P
+- CGH150475-M
+- CGH150476-CI
+- CGH161122-CI
+- CGH161123-M
+- CGH161124-P
+- CGH169-CI
+- CGH235-P
+- CGH236-M
+- CGH539-P
+- CGH540-M
+- CGH542-CI
+- Coriell
+- Undetermined
 
 
-OUTPUT:
-    - Coriellsmall.varscan.snp.vcf.gz
+
+# OUTPUT:
+#     - Coriellsmall.varscan.snp.vcf.gz
 
   # - CGH1008.varscan.snp.vcf
   # - CGH1075.varscan.snp.vcf

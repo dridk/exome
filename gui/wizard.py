@@ -7,8 +7,8 @@ class ExomeWizard(QWizard):
 
 
 
-        self.addPage(BclPage())
-        self.addPage(BclRunPage())
+        # self.addPage(BclPage())
+        # self.addPage(BclRunPage())
 
         self.addPage(SnakePage())
         self.addPage(SnakeRunPage())

@@ -54,13 +54,13 @@ rule all:
 
 
 # =============== MERGE LANES 
-rule mergelane:
-	input: 
-		lambda wildcards : sorted(glob.glob(config["RAW_FOLDER"]+"/"+wildcards.sample+"*_*_"+wildcards.sens+"*.fastq.gz"))
-	output:
-		config["RAW_FOLDER"]+"/{sample}_{sens}.all.fastq.gz"
-	shell:
-		"zcat {input}| gzip > {output}"
+# rule mergelane:
+# 	input: 
+# 		lambda wildcards : sorted(glob.glob(config["RAW_FOLDER"]+"/"+wildcards.sample+"*_*_"+wildcards.sens+"*.fastq.gz"))
+# 	output:
+# 		config["RAW_FOLDER"]+"/{sample}_{sens}.all.fastq.gz"
+# 	shell:
+# 		"zcat {input}| gzip > {output}"
 
 
 # ================ RULE clean 

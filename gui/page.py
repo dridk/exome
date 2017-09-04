@@ -3,6 +3,8 @@ from PyQt5.QtCore import *
 from enum import Enum
 import webbrowser
 import csv 
+from snakehighlighter import *
+
 #------------------------------------------
 class PathLineEdit(QWidget):
 
@@ -161,11 +163,8 @@ class RunPage(QWizardPage):
         self.console.appendPlainText(self.cmd + " " + " ".join(self.args))
 
     def __stop(self):
-        print("stop process")
-        self.proc.kill()
-        QProcess.execute("killall bcl2fastq")
-        QProcess.execute("killall gzip")
-        self.console.clear()
+        pass 
+
 
     def __open(self):
         webbrowser.open(self.args[0]+"/output")
@@ -183,6 +182,12 @@ class BclRunPage(RunPage):
         self.cmd  = "../scripts/createfastq.sh"
         self.args = [self.field("bclpath"),self.field("sheetpath")]
 
+    def __stop(self):
+        print("stop process")
+        self.proc.kill()
+        QProcess.execute("killall bcl2fastq")
+        QProcess.execute("killall gzip")
+        self.console.clear()
 
 
 
@@ -212,36 +217,45 @@ class SnakePage(QWizardPage):
 
     ''' override '''
     def initializePage(self):
+        pass
         # Open and read sheet file 
-        samples = []
-        sheetpath = self.field("sheetpath")
-        with open(sheetpath, 'r') as csvfile:
-            reader = csv.reader(csvfile)
-            save = False
-            for row in reader:
-                if len(row) > 0:
-                    if row[0] == "[Data]":
-                        save = True 
-                        row = next(reader)
-                        row = next(reader)
-                if save == True and len(row) > 2:
-                    samples.append(str(row[0]))
+        # samples = []
+        # sheetpath = self.field("sheetpath")
+        # with open(sheetpath, 'r') as csvfile:
+        #     reader = csv.reader(csvfile)
+        #     save = False
+        #     for row in reader:
+        #         if len(row) > 0:
+        #             if row[0] == "[Data]":
+        #                 save = True 
+        #                 row = next(reader)
+        #                 row = next(reader)
+        #         if save == True and len(row) > 2:
+        #             samples.append(str(row[0]))
 
-        self.sampleModel.setStringList(samples)
-
-
-                    
-                        
-
-
-
-
-
-
+        # self.sampleModel.setStringList(samples)
 
 
 #------------------------------------------
 class SnakeRunPage(RunPage):
     def __init__(self):
         RunPage.__init__(self)
+        self.snakeSyntax = SnakeHighlighter(self.console.document())
+
+
+        ''' override '''
+    def initializePage(self):
+        self.console.clear()
+        self.cmd  = "./run.sh"
+        self.args = []
+
+    def __stop(self):
+        print("stop process")
+        self.proc.kill()
+        # QProcess.execute("killall bcl2fastq")
+        # QProcess.execute("killall gzip")
+        self.console.clear()
+
+
+
 
