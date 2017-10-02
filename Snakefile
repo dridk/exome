@@ -1,7 +1,7 @@
 import os
 import glob
 
-configfile : "config.yml"
+#configfile : "config.yml"
 
 
 

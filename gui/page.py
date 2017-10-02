@@ -3,6 +3,9 @@ from PyQt5.QtCore import *
 from enum import Enum
 import webbrowser
 import csv 
+import os
+import glob
+import yaml
 from snakehighlighter import *
 
 #------------------------------------------
@@ -11,6 +14,7 @@ class PathLineEdit(QWidget):
     class PathType(Enum):
         FILE   = 1
         FOLDER = 2 
+
 
     def __init__(self, type = PathType.FILE):
         QWidget.__init__(self)
@@ -22,7 +26,6 @@ class PathLineEdit(QWidget):
         layout.addWidget(self.button) 
         layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(layout)
-
         self.button.clicked.connect(self.__browse)
 
     def __browse(self):
@@ -52,6 +55,9 @@ class PathLineEdit(QWidget):
         self.edit.setPlaceholderText(value)
 
 
+    def lineEdit(self):
+        return self.edit
+
 
     @pyqtProperty(str)
     def path(self):
@@ -60,6 +66,7 @@ class PathLineEdit(QWidget):
     @path.setter
     def path(self, value):
         self.edit.setText(value)
+
                 
 #------------------------------------------
 
@@ -89,9 +96,15 @@ class BclPage(QWizardPage):
 
         self.description.setText("<b>Convert BCL illumina to Fastq </b>")
 
+
         # register field 
-        self.registerField("bclpath", self.bclPathWidget, "path")
-        self.registerField("sheetpath", self.bclSheetWidget, "path")
+        self.registerField("bclpath", self.bclPathWidget.lineEdit())
+        self.registerField("sheetpath", self.bclSheetWidget.lineEdit())
+
+        # Temp 
+        self.bclPathWidget.path = "/DATAS/illumina/170802_NB501647_0006_AHHT5TAFXX"
+        self.bclSheetWidget.path = "/DATAS/illumina/170802_NB501647_0006_AHHT5TAFXX/sheet.csv"
+
 
 
 #------------------------------------------
@@ -101,6 +114,7 @@ class RunPage(QWizardPage):
         self.cmd  = cmd
         self.args = args 
         self.runComplete = True
+        self.toKill = []
 
         # box layout 
         QWizardPage.__init__(self)
@@ -152,7 +166,11 @@ class RunPage(QWizardPage):
     def __runComplete(self):
         self.runComplete = True 
         self.completeChanged.emit()
-        self.openFolder.setDisabled(False)
+        self.openFolder.setEnabled(True)
+        self.runButton.setEnabled(True)
+        #self.cancelButton.setEnabled(False)
+
+
 
     def __run(self):
         self.proc = QProcess(self)
@@ -161,9 +179,22 @@ class RunPage(QWizardPage):
         self.proc.finished.connect(self.__runComplete)
         self.proc.start(self.cmd, self.args)
         self.console.appendPlainText(self.cmd + " " + " ".join(self.args))
+        self.openFolder.setEnabled(False)
+        self.runButton.setEnabled(False)
+        #self.cancelButton.setEnabled(True)
+
 
     def __stop(self):
-        pass 
+        self.openFolder.setEnabled(True)
+        self.runButton.setEnabled(True)
+        print("stop process")
+        self.proc.kill()
+        self.proc.terminate()
+
+        for p in self.toKill:
+            os.system("killall -9 "+p);
+
+        self.console.clear()
 
 
     def __open(self):
@@ -179,16 +210,10 @@ class BclRunPage(RunPage):
     ''' override '''
     def initializePage(self):
         self.console.clear()
-        self.cmd  = "../scripts/createfastq.sh"
+     
+        self.cmd  = os.path.dirname(os.path.realpath(__file__))+"/createfastq.sh"
         self.args = [self.field("bclpath"),self.field("sheetpath")]
-
-    def __stop(self):
-        print("stop process")
-        self.proc.kill()
-        QProcess.execute("killall bcl2fastq")
-        QProcess.execute("killall gzip")
-        self.console.clear()
-
+        self.toKill = ["bcl2fastq", "gzip"]
 
 
 #------------------------------------------
@@ -197,9 +222,23 @@ class SnakePage(QWizardPage):
         QWizardPage.__init__(self)
         self.fastqpath     = PathLineEdit(PathLineEdit.PathType.FOLDER)
         self.bedpath       = PathLineEdit(PathLineEdit.PathType.FILE)
-        self.sampleModel   = QStringListModel()
-        self.sampleView    = QListView()
-        self.sampleView.setModel(self.sampleModel)
+        self.sampleView    = QTreeWidget()
+        self.sampleView.setHeaderLabels(["sample"])
+        self.sampleView.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.samplesList = []
+        self.sampleView.setContextMenuPolicy(Qt.ActionsContextMenu)
+
+        ## add whole check action 
+        checkAction   = QAction("check all", self)
+        uncheckAction = QAction("un check all", self)
+
+        checkAction.triggered.connect(self.checkAll)
+        uncheckAction.triggered.connect(self.uncheckAll)
+
+        self.sampleView.addAction(checkAction)
+        self.sampleView.addAction(uncheckAction)
+
+        
 
 
         formLayout = QFormLayout()
@@ -212,50 +251,122 @@ class SnakePage(QWizardPage):
 
         self.setLayout(mainLayout)
 
-    def __loadSample(self):
-        pass
+        self.registerField("fastqpath*", self.fastqpath.lineEdit())
+        self.registerField("bedpath*", self.bedpath.lineEdit())
+        self.registerField("samples", self, "samples")
+
+    @pyqtProperty(list)
+    def samples(self):
+        return self.samplesList 
+
+    @samples.setter
+    def samples(self, values):
+        self.samplesList = values
 
     ''' override '''
     def initializePage(self):
-        pass
+        self.samplesList.clear()
+        self.samples = []
+        self.fastqpath.path = self.field("bclpath")+"/output"
         # Open and read sheet file 
-        # samples = []
-        # sheetpath = self.field("sheetpath")
-        # with open(sheetpath, 'r') as csvfile:
-        #     reader = csv.reader(csvfile)
-        #     save = False
-        #     for row in reader:
-        #         if len(row) > 0:
-        #             if row[0] == "[Data]":
-        #                 save = True 
-        #                 row = next(reader)
-        #                 row = next(reader)
-        #         if save == True and len(row) > 2:
-        #             samples.append(str(row[0]))
+        self.__loadSample()
 
-        # self.sampleModel.setStringList(samples)
+    ''' override '''
+    def validatePage(self):
+        self.samples = []
+        for i in range(0,self.sampleView.topLevelItemCount()):
+            item = self.sampleView.topLevelItem(i)
+            if item.checkState(0) == Qt.Checked:
+                self.samples.append(str(item.data(0, Qt.UserRole)))
+
+        return len(self.samples) != 0
+
+    def checkAll(self):
+        for i in range(0,self.sampleView.topLevelItemCount()): 
+            self.sampleView.topLevelItem(i).setCheckState(0,Qt.Checked)
+
+    def uncheckAll(self):
+        for i in range(0,self.sampleView.topLevelItemCount()): 
+            self.sampleView.topLevelItem(i).setCheckState(0,Qt.Unchecked)
+
+    def __findFastq(self,name):
+        return glob.glob(os.path.join(self.fastqpath.path , name+"*.fastq.gz"))
+
+
+    def __loadSample(self):
+        self.samples = []
+        self.sampleView.clear()
+        sheetpath = self.field("sheetpath")
+        if os.path.isfile(sheetpath) is False:
+            return
+
+        with open(sheetpath, 'r') as csvfile:
+            reader = csv.reader(csvfile)
+            save = False
+            for row in reader:
+                if len(row) > 0:
+                    if row[0] == "[Data]":
+                        save = True 
+                        row = next(reader)
+                        row = next(reader)
+                if save == True and len(row) > 2:
+                    name = row[0]
+                    item = QTreeWidgetItem()
+                    item.setCheckState(0,Qt.Checked)
+                    fastqCount = len(self.__findFastq(name))
+                    item.setText(0, "{} ({})".format(name,fastqCount))
+                    item.setData(0, Qt.UserRole, name)
+                    
+                    # if fastqCount >= 9:
+                    #     item.setForeground(0,QColor("#00cc00"))
+                    # else:
+                    #     item.setForeground(0,QColor("#ff6666"))
+
+                    for fq in self.__findFastq(name):
+                        sub = QTreeWidgetItem()
+                        sub.setText(0,fq)
+                        item.addChild(sub)
+
+                    self.sampleView.addTopLevelItem(item)
 
 
 #------------------------------------------
 class SnakeRunPage(RunPage):
     def __init__(self):
         RunPage.__init__(self)
-        self.snakeSyntax = SnakeHighlighter(self.console.document())
+        #self.snakeSyntax = SnakeHighlighter(self.console.document())
+        self.configPath = os.path.dirname(os.path.realpath(__file__))+"/../config.yml"
+        self.toKill = ["snakemake"]
 
 
         ''' override '''
     def initializePage(self):
         self.console.clear()
-        self.cmd  = "./run.sh"
-        self.args = []
+        self.cmd  = os.path.dirname(os.path.realpath(__file__))+"/../run.sh"
+        self.args = ["/tmp/myconfig.yml"]
 
-    def __stop(self):
-        print("stop process")
-        self.proc.kill()
-        # QProcess.execute("killall bcl2fastq")
-        # QProcess.execute("killall gzip")
+        self.__createConfig()
+
+    def cleanupPage(self):
         self.console.clear()
 
 
+    def __createConfig(self): 
+        docs = yaml.load_all(open(self.configPath, "r"))
+        newCfg = {}
+        for doc in docs:
+            for k,v in doc.items():
+                newCfg[k] = v
+
+        newCfg["SAMPLES"] = self.field("samples")
+        newCfg["TARGET_BED_FILE"] = self.field("bedpath")
+        newCfg["RAW_FOLDER"] = self.field("fastqpath")
+        with open(self.args[0],"w") as newFile:
+            yaml.dump(newCfg, newFile, default_flow_style=False)
+      
+        with open(self.args[0],"r") as newFile:
+            for line in newFile:
+                self.console.appendPlainText(line)
 
 
+ 

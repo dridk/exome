@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"darkg",
+				"darkGray\tinstance"
+			],
+			[
+				"dar",
+				"darkGray\tinstance"
+			],
+			[
+				"capture",
+				"capturedEnd\tPyQt Functions"
+			],
+			[
+				"ne",
+				"next\tPyQt Functions"
+			],
+			[
+				"global",
+				"globalMatch\tPyQt Functions"
+			],
+			[
+				"QRegu",
+				"QRegularExpressionMatch\tclass"
+			],
+			[
+				"QRegula",
+				"QRegularExpressionMatchIterator\tclass"
+			],
+			[
 				"samp",
 				"sampleModel\tstatement"
 			],
@@ -100,10 +128,19 @@
 			}
 		},
 		{
+			"file": "bcl2fastq.py",
+			"settings":
+			{
+				"buffer_size": 326,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "page.py",
 			"settings":
 			{
-				"buffer_size": 7342,
+				"buffer_size": 7679,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -112,7 +149,7 @@
 			"file": "snakehighlighter.py",
 			"settings":
 			{
-				"buffer_size": 120,
+				"buffer_size": 956,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -130,7 +167,25 @@
 			"file": "/home/genmol/Devel/exome/run.sh",
 			"settings":
 			{
-				"buffer_size": 163,
+				"buffer_size": 174,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/genmol/Devel/exome/config.yml",
+			"settings":
+			{
+				"buffer_size": 1180,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/genmol/Devel/exome/Snakefile",
+			"settings":
+			{
+				"buffer_size": 6943,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -865,7 +920,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -881,70 +936,13 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								193,
+								193
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "page.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7342,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "snakehighlighter.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 120,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								120,
-								120
-							]
-						],
-						"settings":
-						{
+							"show_definitions": false,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -955,7 +953,98 @@
 					"type": "text"
 				},
 				{
+					"buffer": 1,
+					"file": "bcl2fastq.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								270,
+								270
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "page.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7337,
+								7337
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4959.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
 					"buffer": 3,
+					"file": "snakehighlighter.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "bcl2fastq-gui.sh",
 					"semi_transient": false,
 					"settings":
@@ -979,24 +1068,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/home/genmol/Devel/exome/run.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 163,
+						"buffer_size": 174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								163,
-								163
+								121,
+								121
 							]
 						],
 						"settings":
@@ -1007,11 +1096,71 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
+					"file": "/home/genmol/Devel/exome/config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								471,
+								471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/genmol/Devel/exome/Snakefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1195,
+								1195
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "wizard.py",
 					"semi_transient": false,
 					"settings":
@@ -1023,19 +1172,20 @@
 						"selection":
 						[
 							[
-								226,
-								226
+								69,
+								69
 							]
 						],
 						"settings":
 						{
+							"show_definitions": false,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
