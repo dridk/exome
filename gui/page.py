@@ -227,6 +227,8 @@ class SnakePage(QWizardPage):
         self.sampleView.setSelectionMode(QAbstractItemView.MultiSelection)
         self.samplesList = []
         self.sampleView.setContextMenuPolicy(Qt.ActionsContextMenu)
+        self.label = QLabel("<b>Convert Fastq to VCF</b>")
+
 
         ## add whole check action 
         checkAction   = QAction("check all", self)
@@ -246,6 +248,7 @@ class SnakePage(QWizardPage):
         formLayout.addRow("target bed file", self.bedpath)
 
         mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.label)
         mainLayout.addLayout(formLayout)
         mainLayout.addWidget(self.sampleView)
 
@@ -343,7 +346,7 @@ class SnakeRunPage(RunPage):
     def initializePage(self):
         self.console.clear()
         self.cmd  = os.path.dirname(os.path.realpath(__file__))+"/../run.sh"
-        self.args = ["/tmp/myconfig.yml"]
+        self.args = ["/tmp/myconfig.yml", os.path.join(self.field("bclpath"),"output","analyse")]
 
         self.__createConfig()
 
@@ -369,4 +372,3 @@ class SnakeRunPage(RunPage):
                 self.console.appendPlainText(line)
 
 
- 
